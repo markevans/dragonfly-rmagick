@@ -21,5 +21,15 @@ describe Dragonfly::RMagick::Config do
     @app.encoder.get_registered(Dragonfly::RMagick::Encoder).use_filesystem.should be_false
     @app.generator.get_registered(Dragonfly::RMagick::Generator).use_filesystem.should be_false
   end
+  
+  it "should allow configuring with :rmagick" do
+    @app.configure_with(:rmagick)
+    @app.analyser.objects.first.should be_a(Dragonfly::RMagick::Analyser)
+  end
+
+  it "should allow configuring with :r_magick" do
+    @app.configure_with(:r_magick)
+    @app.analyser.objects.first.should be_a(Dragonfly::RMagick::Analyser)
+  end
 
 end
