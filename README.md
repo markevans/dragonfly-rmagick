@@ -10,13 +10,13 @@ Usage
 -----
 
     require 'dragonfly-rmagick'
-    Dragonfly[:images].configure_with(Dragonfly::RMagick::Config)
+    Dragonfly[:images].configure_with(:rmagick)
 
 In Rails, the above would be done in an initializer.
 
 You can tell RMagick to process everything using in-memory strings, without touching the filesystem, by adding an option when calling `configure_with`
 
-    Dragonfly[:images].configure_with(Dragonfly::RMagick::Config, :use_filesystem => false)
+    Dragonfly[:images].configure_with(:rmagick, :use_filesystem => false)
 
 Then given a dragonfly 'Job' object
 
